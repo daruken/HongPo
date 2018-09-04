@@ -25,11 +25,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-iH-t53">
+                                <rect key="frame" x="140" y="294" width="95" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="playBtnOnClick:" destination="BYZ-38-t0r" eventType="touchDown" id="Aak-lx-SLN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="playButton" destination="JQp-iH-t53" id="sMD-sG-IZl"/>
                         <outlet property="timerLabel" destination="gI6-wo-5Mt" id="zRL-Px-i8k"/>
                     </connections>
                 </viewController>

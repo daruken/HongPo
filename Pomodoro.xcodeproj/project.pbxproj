@@ -14,6 +14,9 @@
 		A64E33A82136CA3E00C258FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64E33A62136CA3E00C258FB /* LaunchScreen.storyboard */; };
 		A64E33B32136CA3E00C258FB /* PomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64E33B22136CA3E00C258FB /* PomodoroTests.swift */; };
 		A64E33BE2136CA3E00C258FB /* PomodoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64E33BD2136CA3E00C258FB /* PomodoroUITests.swift */; };
+		A64E3414213E9DBE00C258FB /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A64E3411213E9DBE00C258FB /* stop.png */; };
+		A64E3416213E9DBE00C258FB /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = A64E3413213E9DBE00C258FB /* pause.png */; };
+		A64E341A213E9E2D00C258FB /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = A64E3419213E9E2D00C258FB /* play.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		A64E33B92136CA3E00C258FB /* PomodoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64E33BD2136CA3E00C258FB /* PomodoroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroUITests.swift; sourceTree = "<group>"; };
 		A64E33BF2136CA3E00C258FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A64E3411213E9DBE00C258FB /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		A64E3413213E9DBE00C258FB /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		A64E3419213E9E2D00C258FB /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		A64E339C2136CA3D00C258FB /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				A64E3419213E9E2D00C258FB /* play.png */,
+				A64E3413213E9DBE00C258FB /* pause.png */,
+				A64E3411213E9DBE00C258FB /* stop.png */,
 				A64E339D2136CA3D00C258FB /* AppDelegate.swift */,
 				A64E339F2136CA3D00C258FB /* ViewController.swift */,
 				A64E33A12136CA3D00C258FB /* Main.storyboard */,
@@ -230,8 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A64E33A82136CA3E00C258FB /* LaunchScreen.storyboard in Resources */,
+				A64E3416213E9DBE00C258FB /* pause.png in Resources */,
+				A64E3414213E9DBE00C258FB /* stop.png in Resources */,
 				A64E33A52136CA3E00C258FB /* Assets.xcassets in Resources */,
 				A64E33A32136CA3D00C258FB /* Main.storyboard in Resources */,
+				A64E341A213E9E2D00C258FB /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
