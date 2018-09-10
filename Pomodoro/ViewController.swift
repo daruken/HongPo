@@ -11,46 +11,78 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     var hpTimer: Timer!
     var totalTime = 5
+    
     var playBtnFlag = 0;
     
     let TIMERPLAYING = 1
     let TIMERPAUSE = 0
-    let TIMERSTOP = 2
     
     
     @IBAction func playBtnOnClick(_ sender: Any) {
         if(playBtnFlag == TIMERPAUSE){
+            playButton.isHidden = false
             playButton.setImage(UIImage(named: "pause.png"), for: .normal)
             playButton.tintColor = UIColor.black
+            playButton.frame.origin = CGPoint(x: 80, y: 295)
+            
+            stopButton.isHidden = false
+            stopButton.setImage(UIImage(named: "stop.png"), for: .normal)
+            stopButton.tintColor = UIColor.black
+            stopButton.frame.origin = CGPoint(x: 200, y: 295)
+            
             startTimer()
             
             playBtnFlag = TIMERPLAYING
-        }else if(playBtnFlag == TIMERPLAYING){
-            playButton.setImage(UIImage(named: "play.png"), for: .normal)
-            playButton.tintColor = UIColor.black
-            stopTimer()
-            
-            playBtnFlag = TIMERPAUSE
         }else{
+            playButton.isHidden = false
             playButton.setImage(UIImage(named: "play.png"), for: .normal)
             playButton.tintColor = UIColor.black
-            totalTime = 5
-            setTimerLabel()
+            playButton.frame.origin = CGPoint(x: 80, y: 295)
+            
+            stopButton.isHidden = false
+            stopButton.setImage(UIImage(named: "stop.png"), for: .normal)
+            stopButton.tintColor = UIColor.black
+            stopButton.frame.origin = CGPoint(x: 200, y: 295)
+            
+            stopTimer()
             
             playBtnFlag = TIMERPAUSE
         }
     }
     
+    @IBAction func stopBtnOnClick(_ sender: Any) {
+        playButton.isHidden = false
+        playButton.frame.origin = CGPoint(x: 140, y: 295)
+        playButton.setImage(UIImage(named: "play.png"), for: .normal)
+        playButton.tintColor = UIColor.black
+        playButton.isEnabled = true
+        
+        stopButton.isHidden = true
+        stopButton.setImage(UIImage(named: "stop.png"), for: .normal)
+        stopButton.tintColor = UIColor.black
+        
+        stopTimer()
+        
+        playBtnFlag = TIMERPAUSE
+        
+        totalTime = 5
+        setTimerLabel()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        playButton.frame.origin = CGPoint(x: 140, y: 295)
         playButton.setImage(UIImage(named: "play.png"), for: .normal)
         playButton.tintColor = UIColor.black
+        
+        stopButton.isHidden = true
+        stopButton.setImage(UIImage(named: "stop.png"), for: .normal)
+        stopButton.tintColor = UIColor.black
         
         setTimerLabel()
     }
@@ -63,9 +95,17 @@ class ViewController: UIViewController {
         if totalTime != 0 {
             totalTime -= 1
         } else {
-            playButton.setImage(UIImage(named: "stop.png"), for: .normal)
+            playButton.isHidden = false
+            playButton.setImage(UIImage(named: "play.png"), for: .normal)
             playButton.tintColor = UIColor.black
-            playBtnFlag = TIMERSTOP
+            playButton.frame.origin = CGPoint(x: 80, y: 295)
+            playButton.isEnabled = false
+            
+            stopButton.isHidden = false
+            stopButton.setImage(UIImage(named: "stop.png"), for: .normal)
+            stopButton.tintColor = UIColor.black
+            stopButton.frame.origin = CGPoint(x: 200, y:295)
+            playBtnFlag = TIMERPLAYING
 
             stopTimer()
         }

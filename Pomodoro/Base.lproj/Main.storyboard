@@ -26,11 +26,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-iH-t53">
-                                <rect key="frame" x="140" y="294" width="95" height="94"/>
+                                <rect key="frame" x="93" y="294" width="95" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="playBtnOnClick:" destination="BYZ-38-t0r" eventType="touchDown" id="Aak-lx-SLN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8p-sa-fo2">
+                                <rect key="frame" x="207" y="294" width="95" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="stopBtnOnClick:" destination="BYZ-38-t0r" eventType="touchDown" id="fuH-rT-Ib7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,6 +47,7 @@
                     </view>
                     <connections>
                         <outlet property="playButton" destination="JQp-iH-t53" id="sMD-sG-IZl"/>
+                        <outlet property="stopButton" destination="L8p-sa-fo2" id="udq-1H-UuO"/>
                         <outlet property="timerLabel" destination="gI6-wo-5Mt" id="zRL-Px-i8k"/>
                     </connections>
                 </viewController>
