@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var settingButton: UIButton!
     
     var hpTimer: Timer!
     var totalTime = 5
@@ -76,13 +78,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        playButton.frame.origin = CGPoint(x: 140, y: 295)
-        playButton.setImage(UIImage(named: "play.png"), for: .normal)
-        playButton.tintColor = UIColor.black
         
-        stopButton.isHidden = true
-        stopButton.setImage(UIImage(named: "stop.png"), for: .normal)
-        stopButton.tintColor = UIColor.black
+        buttonImgLoad()
         
         setTimerLabel()
     }
@@ -108,6 +105,7 @@ class ViewController: UIViewController {
             playBtnFlag = TIMERPLAYING
 
             stopTimer()
+            callAlarm()
         }
         
         setTimerLabel()
@@ -130,7 +128,7 @@ class ViewController: UIViewController {
     }
 
     func setTimerLabel() {
-        let strokeTextAttributes: [NSAttributedStringKey: Any] = [
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
             .strokeColor : UIColor.black,
             .foregroundColor : UIColor.black,
             .strokeWidth : -2.0,
@@ -139,6 +137,24 @@ class ViewController: UIViewController {
         
         timerLabel.textAlignment = .center
         timerLabel.attributedText = NSMutableAttributedString(string: "\(timeFormatted(totalTime))", attributes: strokeTextAttributes)
+    }
+    
+    func buttonImgLoad() {
+        playButton.frame.origin = CGPoint(x: 140, y: 295)
+        playButton.setImage(UIImage(named: "play.png"), for: .normal)
+        playButton.tintColor = UIColor.black
+        
+        stopButton.isHidden = true
+        stopButton.setImage(UIImage(named: "stop.png"), for: .normal)
+        stopButton.tintColor = UIColor.black
+        
+        settingButton.frame.origin = CGPoint(x: 325, y: 80)
+        settingButton.setImage(UIImage(named: "setting.png"), for: .normal)
+        settingButton.tintColor = UIColor.black
+    }
+    
+    func callAlarm() {
+        AudioServicesPlaySystemSound(4095)
     }
 }
 
